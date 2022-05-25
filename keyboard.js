@@ -91,3 +91,17 @@ async function play() {
         if (mousedown) this.classList.add("pressed");
     });
 })();
+
+(function() {
+    const OCTAVES = [3, 4, 5, 6];
+    const BASE_WHITE_NOTES = ["C", "D", "E", "F", "G", "A", "B"];
+    const BASE_BLACK_NOTES = ["C_", "D_", "F_", "G_", "A_"];
+    const WHITE_KEY_IDS = OCTAVES.flatMap(octave => BASE_WHITE_NOTES.map(baseNote => baseNote + octave));
+    const BLACK_KEY_IDS = OCTAVES.flatMap(octave => BASE_BLACK_NOTES.map(baseNote => baseNote + octave));
+    WHITE_KEY_IDS.push("C7");
+
+    const whiteKeys = Array.from(document.querySelectorAll(".whiteKeyInner"));
+    whiteKeys.map((whiteKey, index) => whiteKey.id = WHITE_KEY_IDS[index]);
+    const blackKeys = Array.from(document.querySelectorAll(".blackKeyInner"));
+    blackKeys.map((blackKey, index) => blackKey.id = BLACK_KEY_IDS[index]);
+})();

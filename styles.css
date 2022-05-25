@@ -146,7 +146,7 @@
 
 .whiteKeyInner, .blackKeyInner {
     transform-origin: 0 calc(var(--height) / -2) calc(var(--width) / -2);
-    transition: transform 0.05s linear;
+    /*transition: transform 0.05s linear;*/
 }
 
 .pressed {
@@ -541,6 +541,18 @@
     display: none;
 }
 
+.leftSide {
+    display: none;
+}
+
+.rightSide {
+    display: none;
+}
+
 .segment1ButtonGroup4 {
+    /*display: none;*/
+}
+
+.synthesizer {
     /*display: none;*/
 }

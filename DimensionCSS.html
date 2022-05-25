@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="DimensionCSS.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Synthesizer</title>
+</head>
+<body>
+<div class="canvas">
+    <div class="globalCamera">
+        <div class="synthesizer">
+            <div class="leftSide">
+                <div class="knob knob1">
+                    <div class="knobInner reusableCylinder"></div>
+                </div>
+                <div class="smallButton smallButton1">
+                    <div class="smallButtonInner reusableBox"></div>
+                </div>
+                <div class="smallButton smallButton2">
+                    <div class="smallButtonInner reusableBox"></div>
+                </div>
+                <div class="smallButton smallButton3">
+                    <div class="smallButtonInner reusableBox"></div>
+                </div>
+                <div class="smallButton smallButton4">
+                    <div class="smallButtonInner reusableBox"></div>
+                </div>
+                <div class="smallButton smallButton5">
+                    <div class="smallButtonInner reusableBox"></div>
+                </div>
+                <div class="breaker">
+                    <div class="breakerInner">
+                        <div class="outerCylinder"></div>
+                        <div class="middleCylinder"></div>
+                        <div class="handle"></div>
+                    </div>
+                </div>
+                <div class="breaker breaker1">
+                    <div class="breakerInner">
+                        <div class="outerCylinder reusableCylinder"></div>
+                        <div class="middleCylinder reusableCylinder"></div>
+                        <div class="handle reusableBox"></div>
+                    </div>
+                </div>
+                <div class="breaker breaker2">
+                    <div class="breakerInner">
+                        <div class="outerCylinder reusableCylinder"></div>
+                        <div class="middleCylinder reusableCylinder"></div>
+                        <div class="handle reusableBox"></div>
+                    </div>
+                </div>
+                <div class="leftSideBox reusableBox"></div>
+            </div>
+            <div class="keyboard">
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="whiteKey">
+                    <div class="whiteKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="blackKey">
+                    <div class="blackKeyInner reusableBox"></div>
+                </div>
+                <div class="bottomOfKeyboard reusableBox"></div>
+            </div>
+            <div class="controlPanel">
+                <div class="controlPanelBox reusableBox"></div>
+                <div class="controlBoard1">
+                    <div class="segment1ButtonGroup1">
+                        <div class="knob offsetPos1">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos2">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos3">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos4">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                    </div>
+                    <div class="segment1ButtonGroup2">
+                        <div class="knob offsetPos1">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos2">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos3">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos4">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                    </div>
+                    <div class="segment1ButtonGroup4">
+                        <div class="port smallOffsetPos1">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos2">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos3">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos4">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos5">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos6">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                        <div class="port smallOffsetPos7">
+                            <div class="portInner reusableThickCylinder"></div>
+                        </div>
+                    </div>
+                    <div class="segment1ButtonGroup3">
+                        <div class="smallButton offsetPos1">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos2">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos3">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos4">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controlBoard2">
+                    <div class="smallButton verticalOffsetPos1">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos2">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos3">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos4">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos5">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos6">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                </div>
+                <div class="controlBoard3">
+                    <div class="knob masterVolumeKnob">
+                        <div class="knobInner reusableCylinder"></div>
+                    </div>
+                    <div class="screen screen1">
+                        <div class="screenInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton mainButton1">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton mainButton2">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="bigButton mainButton3">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                </div>
+                <div class="controlBoard4">
+                    <div class="segment2ButtonGroup1">
+                        <div class="knob offsetPos1">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos2">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos3">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos4">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                    </div>
+                    <div class="segment2ButtonGroup2">
+                        <div class="knob offsetPos1">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos2">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos3">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos4">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                    </div>
+                    <div class="segment2ButtonGroup4">
+                        <div class="smallButton offsetPos1 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos2 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos3 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos4 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                    </div>
+                    <div class="segment2ButtonGroup5">
+                        <div class="smallButton offsetPos1 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos2 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos3 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton offsetPos4 whiteButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                    </div>
+                    <div class="segment2ButtonGroup3">
+                        <div class="screen smallScreen offsetPos1">
+                            <div class="screenInner reusableBox"></div>
+                        </div>
+                        <div class="screen smallScreen offsetPos2">
+                            <div class="screenInner reusableBox"></div>
+                        </div>
+                        <div class="screen smallScreen offsetPos3">
+                            <div class="screenInner reusableBox"></div>
+                        </div>
+                        <div class="screen smallScreen offsetPos4">
+                            <div class="screenInner reusableBox"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="controlBoard5">
+                    <div class="smallButton verticalOffsetPos1">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos9">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos7">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos8">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos10">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                    <div class="smallButton verticalOffsetPos6">
+                        <div class="smallButtonInner reusableBox"></div>
+                    </div>
+                </div>
+                <div class="controlBoard6">
+                    <div class="segment3ButtonGroup1">
+                        <div class="knob offsetPos1">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos2">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos3">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos4">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="knob offsetPos5">
+                            <div class="knobInner reusableCylinder"></div>
+                        </div>
+                        <div class="miniButtonGroup1 offsetPos6">
+                            <div class="smallButton verticalOffsetPos11">
+                                <div class="smallButtonInner reusableBox"></div>
+                            </div>
+                            <div class="smallButton verticalOffsetPos12">
+                                <div class="smallButtonInner reusableBox"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="segment3ButtonGroup2">
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                        <div class="smallButton">
+                            <div class="smallButtonInner reusableBox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide reusableBox"></div>
+        </div>
+    </div>
+</div>
+<script src="keyboard.js"></script>
+<script src="photon.min.js"></script>
+<script src="DimensionCSS.js"></script>
+<script type="module" src="Tone.mjs"></script>
+<script type="module" src="sounds.mjs"></script>
+</body>
+</html>

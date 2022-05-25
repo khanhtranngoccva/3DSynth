@@ -1,0 +1,69 @@
+.canvas {
+    background: skyblue;
+    --offsetPerspectiveY: -50px;
+    --offsetPerspectiveX: 20px;
+    perspective: 900px;
+}
+
+.globalCamera {
+    /*animation: _rotateYTest 5s infinite linear;*/
+}
+
+.reusableBox {
+    --width: 110px;
+    --height: 100px;
+    --length: 120px;
+    --topBackground: gold;
+    --leftBackground: pink;
+    --rightBackground: orange;
+    --backBackground: lime;
+    --frontBackground: #ff7474;
+    --bottomBackground: purple;
+    --frontBorderColor: #ff3a5d;
+    --frontBorderStyle: solid;
+    --frontBorderWidth: 10px 5px;
+    --topBorderColor: black;
+    --topBorderStyle: solid;
+    --topBorderWidth: 10px 5px;
+    --leftBorderColor: #009adc;
+    --leftBorderStyle: solid;
+    --leftBorderWidth: 10px 5px;
+    --rightBorderColor: #ffe53a;
+    --rightBorderStyle: solid;
+    --rightBorderWidth: 10px 5px;
+    --bottomBorderColor: white;
+    --bottomBorderStyle: solid;
+    --bottomBorderWidth: 10px 5px;
+    --backBorderColor: blue;
+    --backBorderStyle: solid;
+    --backBorderWidth: 10px 5px;
+    --topBorderImage: linear-gradient(#ff8d8d, pink) 1;
+    transform: translateX(-300px);
+}
+
+.reusableCylinder {
+    --radius: 75px;
+    --height: 150px;
+    --cylinderStripBackground: #d6ffc8;
+    --cylinderTopBackground: red;
+    --cylinderBottomBackground: blue;
+    transform: translateX(-100px) rotateZ(90deg);
+}
+
+.reusableThickCylinder {
+    --thickness: 10px;
+    --outerRadius: 50px;
+    --height: 200px;
+    --cylinderOuterStripBackground: gold;
+    --cylinderInnerStripBackground: orange;
+    --cylinderTopBackground: green;
+    --cylinderBottomBackground: purple;
+    transform: translateX(100px) rotateZ(40deg);
+}
+
+.reusableDonut {
+    --donutRadius: 100px;
+    --thickness: 50px;
+    --donutColor: pink;
+    transform: translate(300px) rotateX(50deg);
+}

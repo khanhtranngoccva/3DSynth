@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* The stage. Set the perspective and origin here. */
+.canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 500px;
+    --offsetPerspectiveX: 0px;
+    --offsetPerspectiveY: -200px;
+    perspective-origin: calc(50% + var(--offsetPerspectiveX)) calc(50% + var(--offsetPerspectiveY));
+    filter: blur(0);
+    overflow: hidden;
+}
+
+/* 3D Canvas transform-style */
+.canvas * {
+    transform-style: preserve-3d;
+}
+
+/* Auto center the camera */
+.canvas > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* Apply camera rotation here. */
+.globalCamera {
+    /*transform: rotateY(180deg);*/
+    /*will-change: transform;*/
+}
+
+/* Framework internals and test */
+@keyframes _rotateTest {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes _rotateYTest {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes _rotateZTest {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes _rotateXTest {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+/* Reusable boxes */
+.reusableBox {
+}
+
+._reusableBox__boxFace {
+    position: absolute;
+}
+
+._reusableBox__boxFront, ._reusableBox__boxBack {
+    width: var(--length);
+    height: var(--height);
+    left: calc(var(--length) / -2);
+    top: calc(var(--height) / -2);
+}
+
+._reusableBox__boxLeft, ._reusableBox__boxRight {
+    width: var(--width);
+    height: var(--height);
+    left: calc(var(--width) / -2);
+    top: calc(var(--height) / -2);
+}
+
+._reusableBox__boxBottom, ._reusableBox__boxTop {
+    width: var(--length);
+    height: var(--width);
+    left: calc(var(--length) / -2);
+    top: calc(var(--width) / -2);
+}
+
+._reusableBox__boxFront {
+    transform: rotateY(0deg) translateZ(calc(var(--width) / 2));
+    background: var(--frontBackground);
+    border-color: var(--frontBorderColor);
+    border-width: var(--frontBorderWidth);
+    border-style: var(--frontBorderStyle);
+    border-image: var(--frontBorderImage);
+}
+
+._reusableBox__boxBack {
+    transform: rotateY(180deg) translateZ(calc(var(--width) / 2));
+    background: var(--backBackground);
+    border-color: var(--backBorderColor);
+    border-width: var(--backBorderWidth);
+    border-style: var(--backBorderStyle);
+    border-image: var(--backBorderImage);
+}
+
+._reusableBox__boxLeft {
+    transform: rotateY(-90deg) translateZ(calc(var(--length) / 2));
+    background: var(--leftBackground);
+    border-color: var(--leftBorderColor);
+    border-width: var(--leftBorderWidth);
+    border-style: var(--leftBorderStyle);
+    border-image: var(--leftBorderImage);
+}
+
+._reusableBox__boxRight {
+    transform: rotateY(90deg) translateZ(calc(var(--length) / 2));
+    background: var(--rightBackground);
+    border-color: var(--rightBorderColor);
+    border-width: var(--rightBorderWidth);
+    border-style: var(--rightBorderStyle);
+    border-image: var(--rightBorderImage);
+}
+
+._reusableBox__boxTop {
+    transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
+    background: var(--topBackground);
+    border-color: var(--topBorderColor);
+    border-width: var(--topBorderWidth);
+    border-style: var(--topBorderStyle);
+    border-image: var(--topBorderImage);
+}
+
+._reusableBox__boxBottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
+    background: var(--bottomBackground);
+    border-color: var(--bottomBorderColor);
+    border-width: var(--bottomBorderWidth);
+    border-style: var(--bottomBorderStyle);
+    border-image: var(--bottomBorderImage);
+}
+
+/* Reusable cylinder */
+.reusableCylinder {
+
+}
+
+._reusableCylinder__cylinderFace {
+    position: absolute;
+    left: calc(var(--width) / -2);
+    top: calc(var(--height) / -2);
+}
+
+._reusableCylinder__cylinderTop, ._reusableCylinder__cylinderBottom {
+    border-radius: 50%;
+    width: calc(2 * var(--radius));
+    aspect-ratio: 1/1;
+    left: calc(-1 * var(--radius));
+    top: calc(-1 * var(--radius));
+}
+
+._reusableCylinder__cylinderStrip {
+    height: var(--height);
+    width: var(--width);
+    background: var(--cylinderStripBackground);
+}
+
+._reusableCylinder__cylinderTop {
+    transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
+    background: var(--cylinderTopBackground);
+}
+
+._reusableCylinder__cylinderBottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
+    background: var(--cylinderBottomBackground);
+}
+
+/* Reusable cylinder with thickness */
+.reusableThickCylinder {
+}
+
+.reusableThickCylinder .reusableCylinder {
+    --radius: var(--outerRadius);
+    transform: none;
+    --cylinderTopBackground: inherit;
+    --cylinderBottomBackground: inherit;
+}
+
+.reusableThickCylinder .reusableCylinderInner {
+    --radius: calc(var(--outerRadius) - var(--thickness));
+}
+
+.reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderTop, .reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderBottom {
+    background: none;
+}
+
+.reusableThickCylinder ._reusableCylinder__cylinderStrip {
+    background: var(--cylinderOuterStripBackground);
+}
+
+.reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderStrip {
+    background: var(--cylinderInnerStripBackground);
+}
+
+.reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderTop {
+    border: var(--thickness) solid var(--cylinderTopBackground);
+}
+
+.reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderBottom {
+    border: var(--thickness) solid var(--cylinderBottomBackground);
+}
+
+.reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderTop, .reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderBottom {
+    display: none;
+}
+
+/* Reusable 3D donut shape */
+.reusableDonut {
+}
+
+.reusableDonut .reusableCylinder {
+    --radius: calc(var(--thickness) / 2);
+    --cylinderStripBackground: var(--donutColor);
+}
+
+.reusableDonut ._reusableCylinder__cylinderTop, .reusableDonut ._reusableCylinder__cylinderBottom {
+    display: none;
+}

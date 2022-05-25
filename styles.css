@@ -1,0 +1,546 @@
+.leftSide {
+    /*display: none;*/
+}
+
+.canvas {
+    background: #3da1ff;
+    perspective: 1000px;
+    --offsetPerspectiveY: -700px;
+}
+
+.globalCamera {
+    /*transform: rotateY(35deg);*/
+    transition: transform 0.1s linear;
+    /*animation: _rotateYTest 10s linear infinite;*/
+}
+
+.leftSideBox {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: white;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: 300px;
+    --height: 40px;
+    --length: 120px;
+}
+
+.knob {
+    --cylinderStripBackground: #1c1c1c;
+    --cylinderTopBackground: #525252;
+    --radius: 12px;
+    --height: 30px;
+}
+
+.knob1 {
+    transform: translateZ(-25px) translateY(-20px);
+}
+
+.smallButton {
+    --width: 10px;
+    --length: 20px;
+    --height: 10px;
+    --topBackground: #545454;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.smallButton1 {
+    transform: translateX(-20px) translateZ(30px) translateY(-20px);
+}
+
+.smallButton2 {
+    transform: translateX(20px) translateZ(30px) translateY(-20px);
+}
+
+.smallButton3 {
+    transform: translateZ(60px) translateY(-20px);
+}
+
+.smallButton4 {
+    transform: translateX(30px) translateZ(60px) translateY(-20px);
+}
+
+.smallButton5 {
+    transform: translateX(-30px) translateZ(60px) translateY(-20px);
+}
+
+
+.breaker .outerCylinder {
+    --height: 17px;
+    --radius: 25px;
+    --cylinderStripBackground: #5d5d5d;
+    --cylinderTopBackground: #171717;
+    --cylinderBottomBackground: #171717;
+    transform: rotateZ(90deg);
+}
+
+.breaker .middleCylinder {
+    --height: 6px;
+    --radius: 26px;
+    --cylinderStripBackground: #25ffff;
+    --cylinderTopBackground: #25ffff;
+    --cylinderBottomBackground: #25ffff;
+    transform: rotateZ(90deg);
+}
+
+.breaker .handle {
+    --width: 7px;
+    --length: 17px;
+    --height: 10px;
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    transform: translateY(-30px);
+}
+
+.breaker1 {
+    transform: translateX(-20px) translateZ(105px) translateY(-7px);
+}
+
+.breaker2 {
+    transform: translateX(20px) translateZ(105px) translateY(-7px);
+}
+
+.keyboard {
+
+}
+
+.whiteKey {
+    --width: 100px;
+    --height: 15px;
+    --length: var(--bigKeyLength);
+    --topBackground: white;
+    --frontBackground: #ececec;
+    --leftBackground: #8d8d8d;
+    --rightBackground: #8d8d8d;
+
+}
+
+.blackKey {
+    --width: 70px;
+    --height: 20px;
+    --length: 15px;
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.keyboard {
+    transform: translateZ(100px) translateX(50px);
+}
+
+.leftSide {
+    transform: translateX(-387px);
+}
+
+.whiteKeyInner, .blackKeyInner {
+    transform-origin: 0 calc(var(--height) / -2) calc(var(--width) / -2);
+    transition: transform 0.05s linear;
+}
+
+.pressed {
+    transform: rotateX(-5deg);
+}
+
+.bottomOfKeyboard {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --rightBackground: #171717;
+    --leftBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: 100px;
+    --height: 10px;
+    --length: calc(29 * var(--bigKeyLength) + 28px);
+    transform: translateY(15px);
+}
+
+.synthesizer {
+    --bigKeyLength: 25px;
+}
+
+.controlPanel {
+    transform: translateZ(-50px) translateX(50px);
+}
+
+.controlPanelBox {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --rightBackground: #171717;
+    --leftBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: 200px;
+    --height: 40px;
+    --length: calc(29 * var(--bigKeyLength) + 29px);
+    margin: -1px
+}
+
+.controlBoard1 {
+    transform: translateX(-280px) translateY(-20px);
+}
+
+.offsetPos1 {
+    transform: translateX(-60px);
+}
+
+.offsetPos2 {
+    transform: translateX(-20px);
+}
+.offsetPos3 {
+    transform: translateX(20px);
+}
+
+.offsetPos4 {
+    transform: translateX(60px);
+}
+
+.segment1ButtonGroup1 {
+    transform: translateZ(-15px);
+}
+
+.segment1ButtonGroup2 {
+    transform: translateZ(25px);
+}
+
+.segment1ButtonGroup3 {
+    transform: translateZ(60px);
+}
+
+.controlBoard2 {
+    transform: translateX(-180px) translateY(-20px);
+}
+
+.verticalOffsetPos1 {
+    transform: translateZ(-60px);
+}
+.verticalOffsetPos2 {
+    transform: translateZ(-40px);
+}
+.verticalOffsetPos3 {
+    transform: translateZ(-20px);
+}
+.verticalOffsetPos4 {
+    transform: translateZ(20px);
+}
+.verticalOffsetPos5 {
+    transform: translateZ(40px);
+}
+.verticalOffsetPos6 {
+    transform: translateZ(60px);
+}
+
+.controlBoard3 {
+    transform: translateX(-120px) translateY(-20px);
+}
+
+.masterVolumeKnob {
+    --radius: 25px;
+    transform: translateZ(-45px);
+}
+
+.screen {
+    --height: 2px;
+    --width: 25px;
+    --length: 50px;
+    --topBackground: #00fff6;
+    --leftBackground: black;
+    --rightBackground: black;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.screen1 {
+    transform: translateZ(5px);
+}
+
+.mainButton1 {
+    transform: translateX(-15px) translateZ(35px);
+}
+
+.mainButton2 {
+    transform: translateX(15px) translateZ(35px);
+}
+
+.bigButton {
+    --length: 50px;
+    --width: 10px;
+    --height: 10px;
+    --topBackground: #545454;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.mainButton3 {
+    transform: translateZ(60px);
+}
+
+.controlBoard4 {
+    transform: translateX(-5px) translateY(-20px);
+}
+
+.segment2ButtonGroup1 {
+    transform: translateZ(-50px);
+}
+
+.segment2ButtonGroup2 {
+    transform: translateZ(60px);
+}
+
+.segment2ButtonGroup3 {
+    transform: translateZ(5px);
+}
+
+.segment2ButtonGroup4 {
+    transform: translateZ(-25px);
+}
+
+.segment2ButtonGroup5 {
+    transform: translateZ(35px);
+}
+
+.smallScreen {
+    --length: 30px;
+}
+
+.whiteButton {
+    --topBackground: white;
+}
+
+.controlBoard5 {
+    transform: translateX(92px) translateY(-20px);
+}
+
+.controlBoard6 {
+    transform: translateX(245px) translateY(-20px);
+}
+
+.segment3ButtonGroup1 {
+    transform: translateZ(-50px);
+}
+
+.verticalOffsetPos7 {
+    transform: translateZ(-5px);
+}
+
+.verticalOffsetPos8 {
+    transform: translateZ(10px);
+}
+
+.verticalOffsetPos9 {
+    transform: translateZ(-25px);
+}
+
+.verticalOffsetPos10 {
+    transform: translateZ(35px);
+}
+
+.offsetPos5 {
+    transform: translate(-100px);
+}
+
+.offsetPos6 {
+    transform: translate(100px);
+}
+.segment3ButtonGroup2 {
+    transform: translateZ(35px);
+}
+
+.segment3ButtonGroup2 .smallButton {
+    --length: 20px
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(1) {
+    transform: translate3d(-105px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(2) {
+    transform: translate3d(-105px, 0, -15px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(3) {
+    transform: translate3d(-105px, 0, 15px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(4) {
+    transform: translate3d(-80px, 0, -15px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(5) {
+    transform: translate3d(-80px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(6) {
+    transform: translate3d(-55px, 0, -15px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(7) {
+    transform: translate3d(-55px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(8) {
+    transform: translate3d(-55px, 0, 15px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(9) {
+    transform: translate3d(-30px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(10) {
+    transform: translate3d(-5px, 0, -7px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(11) {
+    transform: translate3d(-5px, 0, 7px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(12) {
+    transform: translate3d(-5px, 0, -30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(13) {
+    transform: translate3d(-5px, 0, 30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(14) {
+    transform: translate3d(20px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(15) {
+    transform: translate3d(20px, 0, -30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(16) {
+    transform: translate3d(20px, 0, 30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(17) {
+    transform: translate3d(45px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(18) {
+    transform: translate3d(45px, 0, -30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(19) {
+    transform: translate3d(45px, 0, 30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(20) {
+    transform: translate3d(70px, 0, -7px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(21) {
+    transform: translate3d(70px, 0, 7px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(22) {
+    transform: translate3d(70px, 0, -30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(23) {
+    transform: translate3d(70px, 0, 30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(24) {
+    transform: translate3d(95px, 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(25) {
+    transform: translate3d(95px, 0, -30px);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(26) {
+    transform: translate3d(95px, 0, 30px);
+}
+
+/*.segment3ButtonGroup2 .smallButton:nth-of-type(17) {*/
+/*    transform: translate3d(15px, 0, -30px);*/
+/*}*/
+
+/*.segment3ButtonGroup2 .smallButton:nth-of-type(18) {*/
+/*    transform: translate3d(15px, 0, 30px);*/
+/*}*/
+
+.verticalOffsetPos11 {
+    transform: translateZ(-7px);
+}
+
+.verticalOffsetPos12 {
+    transform: translateZ(7px);
+}
+
+.rightSide {
+    --length: 5px;
+    --width: 300px;
+    --height: 40px;
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: white;
+    --frontBackground: black;
+    --backBackground: black;
+    transform: translateX(427px);
+}
+
+.port {
+    --thickness: 2px;
+    --height: 10px;
+    --outerRadius: 8px;
+    /*--thickness: 10px;*/
+    /*--outerRadius: 50px;*/
+    /*--height: 200px;*/
+    --cylinderOuterStripBackground: #cccccc;
+    --cylinderInnerStripBackground: #cccccc;
+    --cylinderTopBackground: #e1e1e1;
+}
+
+.segment1ButtonGroup4 {
+    transform: translateZ(-55px);
+}
+
+.smallOffsetPos1 {
+    transform: translateX(-60px);
+}
+
+.smallOffsetPos2 {
+    transform: translateX(-40px);
+}
+
+.smallOffsetPos3 {
+    transform: translateX(-20px);
+}
+
+.smallOffsetPos5 {
+    transform: translateX(20px);
+}
+
+.smallOffsetPos6 {
+    transform: translateX(40px);
+}
+
+.smallOffsetPos7 {
+    transform: translateX(60px);
+}
+
+.controlPanel {
+    display: none;
+}
+
+.segment1ButtonGroup4 {
+    /*display: none;*/
+}

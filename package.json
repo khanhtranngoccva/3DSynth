@@ -1,6 +1,33 @@
 {
   "dependencies": {
+    "@tonejs/piano": "^0.2.1",
     "browser-sync": "^2.27.10",
+    "busboy": "^1.6.0",
+    "events": "^3.3.0",
+    "midi-json-parser": "^8.1.7",
+    "midi-parser-js": "^4.0.4",
+    "multer": "^1.4.4",
     "tone": "^14.7.77"
-  }
+  },
+  "name": "3dsynth",
+  "version": "1.0.0",
+  "main": "./backend/index.js",
+  "scripts": {
+    "test": "nodemon ./backend/index.js",
+    "start": "node ./backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhtranngoccva/3DSynth.git"
+  },
+  "keywords": [
+    "Synthesizer"
+  ],
+  "author": "Khanh Tran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khanhtranngoccva/3DSynth/issues"
+  },
+  "homepage": "https://github.com/khanhtranngoccva/3DSynth#readme",
+  "description": ""
 }

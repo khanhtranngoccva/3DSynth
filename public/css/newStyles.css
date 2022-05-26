@@ -1,0 +1,555 @@
+.leftSide {
+    /*display: none;*/
+}
+
+.canvas {
+    background: #3da1ff;
+    perspective: calc(var(--unitSize) * 100);
+    --offsetPerspectiveY: calc(var(--unitSize) * -70);
+    user-select: none;
+    --unitSize: 1.2vmin;
+}
+
+.canvas * {
+    will-change: transform;
+}
+.globalCamera {
+    /*transform: rotateY(35deg);*/
+    transition: transform 0.1s linear;
+    /*animation: _rotateYTest 10s linear infinite;*/
+}
+
+.leftSideBox {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: white;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: calc(var(--unitSize) * 30);
+    --height: calc(var(--unitSize) * 4);
+    --length: calc(var(--unitSize) * 12);
+}
+
+.knob {
+    --cylinderStripBackground: #1c1c1c;
+    --cylinderTopBackground: #525252;
+    --radius: calc(var(--unitSize) * 1.2);
+    --height: calc(var(--unitSize) * 3);
+}
+
+.knob1 {
+    transform: translateZ(calc(var(--unitSize) * -2.5)) translateY(calc(var(--unitSize) * -2));
+}
+
+.smallButton {
+    --width: calc(var(--unitSize) * 1);
+    --length: calc(var(--unitSize) * 2);
+    --height: calc(var(--unitSize) * 1);
+    --topBackground: #545454;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.smallButton1 {
+    transform: translateX(calc(var(--unitSize) * -2)) translateZ(calc(var(--unitSize) * 3)) translateY(calc(var(--unitSize) * -2));
+}
+
+.smallButton2 {
+    transform: translateX(calc(var(--unitSize) * 2)) translateZ(calc(var(--unitSize) * 3)) translateY(calc(var(--unitSize) * -2));
+}
+
+.smallButton3 {
+    transform: translateZ(calc(var(--unitSize) * 6)) translateY(calc(var(--unitSize) * -2));
+}
+
+.smallButton4 {
+    transform: translateX(calc(var(--unitSize) * 3)) translateZ(calc(var(--unitSize) * 6)) translateY(calc(var(--unitSize) * -2));
+}
+
+.smallButton5 {
+    transform: translateX(calc(var(--unitSize) * -3)) translateZ(calc(var(--unitSize) * 6)) translateY(calc(var(--unitSize) * -2));
+}
+
+
+.breaker .outerCylinder {
+    --height: calc(var(--unitSize) * 1.7);
+    --radius: calc(var(--unitSize) * 2.5);
+    --cylinderStripBackground: #5d5d5d;
+    --cylinderTopBackground: #171717;
+    --cylinderBottomBackground: #171717;
+    transform: rotateZ(90deg);
+}
+
+.breaker .middleCylinder {
+    --height: calc(var(--unitSize) * 0.6);
+    --radius: calc(var(--unitSize) * 2.6);
+    --cylinderStripBackground: #25ffff;
+    --cylinderTopBackground: #25ffff;
+    --cylinderBottomBackground: #25ffff;
+    transform: rotateZ(90deg);
+}
+
+.breaker .handle {
+    --width: calc(var(--unitSize) * 0.7);
+    --length: calc(var(--unitSize) * 1.7);
+    --height: calc(var(--unitSize) * 1);
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    transform: translateY(calc(var(--unitSize) * -3));
+}
+
+.breaker1 {
+    transform: translateX(calc(var(--unitSize) * -2)) translateZ(calc(var(--unitSize) * 10.5)) translateY(calc(var(--unitSize) * -0.7));
+}
+
+.breaker2 {
+    transform: translateX(calc(var(--unitSize) * 2)) translateZ(calc(var(--unitSize) * 10.5)) translateY(calc(var(--unitSize) * -0.7));
+}
+
+.keyboard {
+
+}
+
+.whiteKey {
+    --width: calc(var(--unitSize) * 10);
+    --height: calc(var(--unitSize) * 1.5);
+    --length: var(--bigKeyLength);
+    --topBackground: white;
+    --frontBackground: #ececec;
+    --leftBackground: #8d8d8d;
+    --rightBackground: #8d8d8d;
+
+}
+
+.blackKey {
+    --width: calc(var(--unitSize) * 7);
+    --height: calc(var(--unitSize) * 2);
+    --length: calc(var(--unitSize) * 1.5);
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.keyboard {
+    transform: translateZ(calc(var(--unitSize) * 10)) translateX(calc(var(--unitSize) * 5));
+}
+
+.leftSide {
+    transform: translateX(calc(var(--unitSize) * -38.7));
+}
+
+.whiteKeyInner, .blackKeyInner {
+    transform-origin: 0 calc(var(--height) / -2) calc(var(--width) / -2);
+    transition: transform 0.05s linear;
+}
+
+.pressed {
+    transform: rotateX(-5deg);
+}
+
+.bottomOfKeyboard {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --rightBackground: #171717;
+    --leftBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: calc(var(--unitSize) * 10);
+    --height: calc(var(--unitSize) * 1);
+    --length: calc(29 * var(--bigKeyLength) + calc(var(--unitSize) * 2.8));
+    transform: translateY(calc(var(--unitSize) * 1.5));
+}
+
+.synthesizer {
+    --bigKeyLength: calc(var(--unitSize) * 2.5);
+}
+
+.controlPanel {
+    transform: translateZ(calc(var(--unitSize) * -5)) translateX(calc(var(--unitSize) * 5));
+}
+
+.controlPanelBox {
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --rightBackground: #171717;
+    --leftBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    --width: calc(var(--unitSize) * 20);
+    --height: calc(var(--unitSize) * 4);
+    --length: calc(29 * var(--bigKeyLength) + calc(var(--unitSize) * 2.9));
+    margin: calc(var(--unitSize) * -0.1)
+}
+
+.controlBoard1 {
+    transform: translateX(calc(var(--unitSize) * -28)) translateY(calc(var(--unitSize) * -2));
+}
+
+.offsetPos1 {
+    transform: translateX(calc(var(--unitSize) * -6));
+}
+
+.offsetPos2 {
+    transform: translateX(calc(var(--unitSize) * -2));
+}
+.offsetPos3 {
+    transform: translateX(calc(var(--unitSize) * 2));
+}
+
+.offsetPos4 {
+    transform: translateX(calc(var(--unitSize) * 6));
+}
+
+.segment1ButtonGroup1 {
+    transform: translateZ(calc(var(--unitSize) * -1.5));
+}
+
+.segment1ButtonGroup2 {
+    transform: translateZ(calc(var(--unitSize) * 2.5));
+}
+
+.segment1ButtonGroup3 {
+    transform: translateZ(calc(var(--unitSize) * 6));
+}
+
+.controlBoard2 {
+    transform: translateX(calc(var(--unitSize) * -18)) translateY(calc(var(--unitSize) * -2));
+}
+
+.verticalOffsetPos1 {
+    transform: translateZ(calc(var(--unitSize) * -6));
+}
+.verticalOffsetPos2 {
+    transform: translateZ(calc(var(--unitSize) * -4));
+}
+.verticalOffsetPos3 {
+    transform: translateZ(calc(var(--unitSize) * -2));
+}
+.verticalOffsetPos4 {
+    transform: translateZ(calc(var(--unitSize) * 2));
+}
+.verticalOffsetPos5 {
+    transform: translateZ(calc(var(--unitSize) * 4));
+}
+.verticalOffsetPos6 {
+    transform: translateZ(calc(var(--unitSize) * 6));
+}
+
+.controlBoard3 {
+    transform: translateX(calc(var(--unitSize) * -12)) translateY(calc(var(--unitSize) * -2));
+}
+
+.masterVolumeKnob {
+    --radius: calc(var(--unitSize) * 2.5);
+    transform: translateZ(calc(var(--unitSize) * -4.5));
+}
+
+.screen {
+    --height: calc(var(--unitSize) * 0.2);
+    --width: calc(var(--unitSize) * 2.5);
+    --length: calc(var(--unitSize) * 5);
+    --topBackground: #00fff6;
+    --leftBackground: black;
+    --rightBackground: black;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.screen1 {
+    transform: translateZ(calc(var(--unitSize) * 0.5));
+}
+
+.mainButton1 {
+    transform: translateX(calc(var(--unitSize) * -1.5)) translateZ(calc(var(--unitSize) * 3.5));
+}
+
+.mainButton2 {
+    transform: translateX(calc(var(--unitSize) * 1.5)) translateZ(calc(var(--unitSize) * 3.5));
+}
+
+.bigButton {
+    --length: calc(var(--unitSize) * 5);
+    --width: calc(var(--unitSize) * 1);
+    --height: calc(var(--unitSize) * 1);
+    --topBackground: #545454;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+}
+
+.mainButton3 {
+    transform: translateZ(calc(var(--unitSize) * 6));
+}
+
+.controlBoard4 {
+    transform: translateX(calc(var(--unitSize) * -0.5)) translateY(calc(var(--unitSize) * -2));
+}
+
+.segment2ButtonGroup1 {
+    transform: translateZ(calc(var(--unitSize) * -5));
+}
+
+.segment2ButtonGroup2 {
+    transform: translateZ(calc(var(--unitSize) * 6));
+}
+
+.segment2ButtonGroup3 {
+    transform: translateZ(calc(var(--unitSize) * 0.5));
+}
+
+.segment2ButtonGroup4 {
+    transform: translateZ(calc(var(--unitSize) * -2.5));
+}
+
+.segment2ButtonGroup5 {
+    transform: translateZ(calc(var(--unitSize) * 3.5));
+}
+
+.smallScreen {
+    --length: calc(var(--unitSize) * 3);
+}
+
+.whiteButton {
+    --topBackground: white;
+}
+
+.controlBoard5 {
+    transform: translateX(calc(var(--unitSize) * 9.2)) translateY(calc(var(--unitSize) * -2));
+}
+
+.controlBoard6 {
+    transform: translateX(calc(var(--unitSize) * 24.5)) translateY(calc(var(--unitSize) * -2));
+}
+
+.segment3ButtonGroup1 {
+    transform: translateZ(calc(var(--unitSize) * -5));
+}
+
+.verticalOffsetPos7 {
+    transform: translateZ(calc(var(--unitSize) * -0.5));
+}
+
+.verticalOffsetPos8 {
+    transform: translateZ(calc(var(--unitSize) * 1));
+}
+
+.verticalOffsetPos9 {
+    transform: translateZ(calc(var(--unitSize) * -2.5));
+}
+
+.verticalOffsetPos10 {
+    transform: translateZ(calc(var(--unitSize) * 3.5));
+}
+
+.offsetPos5 {
+    transform: translate(calc(var(--unitSize) * -10));
+}
+
+.offsetPos6 {
+    transform: translate(calc(var(--unitSize) * 10));
+}
+.segment3ButtonGroup2 {
+    transform: translateZ(calc(var(--unitSize) * 3.5));
+}
+
+.segment3ButtonGroup2 .smallButton {
+    --length: calc(var(--unitSize) * 2)
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(1) {
+    transform: translate3d(calc(var(--unitSize) * -10.5), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(2) {
+    transform: translate3d(calc(var(--unitSize) * -10.5), 0, calc(var(--unitSize) * -1.5));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(3) {
+    transform: translate3d(calc(var(--unitSize) * -10.5), 0, calc(var(--unitSize) * 1.5));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(4) {
+    transform: translate3d(calc(var(--unitSize) * -8), 0, calc(var(--unitSize) * -1.5));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(5) {
+    transform: translate3d(calc(var(--unitSize) * -8), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(6) {
+    transform: translate3d(calc(var(--unitSize) * -5.5), 0, calc(var(--unitSize) * -1.5));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(7) {
+    transform: translate3d(calc(var(--unitSize) * -5.5), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(8) {
+    transform: translate3d(calc(var(--unitSize) * -5.5), 0, calc(var(--unitSize) * 1.5));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(9) {
+    transform: translate3d(calc(var(--unitSize) * -3), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(10) {
+    transform: translate3d(calc(var(--unitSize) * -0.5), 0, calc(var(--unitSize) * -0.7));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(11) {
+    transform: translate3d(calc(var(--unitSize) * -0.5), 0, calc(var(--unitSize) * 0.7));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(12) {
+    transform: translate3d(calc(var(--unitSize) * -0.5), 0, calc(var(--unitSize) * -3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(13) {
+    transform: translate3d(calc(var(--unitSize) * -0.5), 0, calc(var(--unitSize) * 3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(14) {
+    transform: translate3d(calc(var(--unitSize) * 2), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(15) {
+    transform: translate3d(calc(var(--unitSize) * 2), 0, calc(var(--unitSize) * -3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(16) {
+    transform: translate3d(calc(var(--unitSize) * 2), 0, calc(var(--unitSize) * 3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(17) {
+    transform: translate3d(calc(var(--unitSize) * 4.5), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(18) {
+    transform: translate3d(calc(var(--unitSize) * 4.5), 0, calc(var(--unitSize) * -3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(19) {
+    transform: translate3d(calc(var(--unitSize) * 4.5), 0, calc(var(--unitSize) * 3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(20) {
+    transform: translate3d(calc(var(--unitSize) * 7), 0, calc(var(--unitSize) * -0.7));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(21) {
+    transform: translate3d(calc(var(--unitSize) * 7), 0, calc(var(--unitSize) * 0.7));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(22) {
+    transform: translate3d(calc(var(--unitSize) * 7), 0, calc(var(--unitSize) * -3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(23) {
+    transform: translate3d(calc(var(--unitSize) * 7), 0, calc(var(--unitSize) * 3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(24) {
+    transform: translate3d(calc(var(--unitSize) * 9.5), 0, 0);
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(25) {
+    transform: translate3d(calc(var(--unitSize) * 9.5), 0, calc(var(--unitSize) * -3));
+}
+
+.segment3ButtonGroup2 .smallButton:nth-of-type(26) {
+    transform: translate3d(calc(var(--unitSize) * 9.5), 0, calc(var(--unitSize) * 3));
+}
+
+/*.segment3ButtonGroup2 .smallButton:nth-of-type(17) {*/
+/*    transform: translate3d(calc(var(--unitSize) * 1.5), 0, calc(var(--unitSize) * -3));*/
+/*}*/
+
+/*.segment3ButtonGroup2 .smallButton:nth-of-type(18) {*/
+/*    transform: translate3d(calc(var(--unitSize) * 1.5), 0, calc(var(--unitSize) * 3));*/
+/*}*/
+
+.verticalOffsetPos11 {
+    transform: translateZ(calc(var(--unitSize) * -0.7));
+}
+
+.verticalOffsetPos12 {
+    transform: translateZ(calc(var(--unitSize) * 0.7));
+}
+
+.rightSide {
+    --length: calc(var(--unitSize) * 0.5);
+    --width: calc(var(--unitSize) * 30);
+    --height: calc(var(--unitSize) * 4);
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --leftBackground: #171717;
+    --rightBackground: white;
+    --frontBackground: black;
+    --backBackground: black;
+    transform: translateX(calc(var(--unitSize) * 42.7));
+}
+
+.port {
+    --thickness: calc(var(--unitSize) * 0.2);
+    --height: calc(var(--unitSize) * 1);
+    --outerRadius: calc(var(--unitSize) * 0.8);
+    /*--thickness: calc(var(--unitSize) * 1);*/
+    /*--outerRadius: calc(var(--unitSize) * 5);*/
+    /*--height: calc(var(--unitSize) * 20);*/
+    --cylinderOuterStripBackground: #cccccc;
+    --cylinderInnerStripBackground: #cccccc;
+    --cylinderTopBackground: #e1e1e1;
+}
+
+.segment1ButtonGroup4 {
+    transform: translateZ(calc(var(--unitSize) * -5.5));
+}
+
+.smallOffsetPos1 {
+    transform: translateX(calc(var(--unitSize) * -6));
+}
+
+.smallOffsetPos2 {
+    transform: translateX(calc(var(--unitSize) * -4));
+}
+
+.smallOffsetPos3 {
+    transform: translateX(calc(var(--unitSize) * -2));
+}
+
+.smallOffsetPos5 {
+    transform: translateX(calc(var(--unitSize) * 2));
+}
+
+.smallOffsetPos6 {
+    transform: translateX(calc(var(--unitSize) * 4));
+}
+
+.smallOffsetPos7 {
+    transform: translateX(calc(var(--unitSize) * 6));
+}
+
+.smallButtonInner {
+    transition: transform 0.25s ease;
+}
+
+.smallButtonInner:active {
+    transform: translateY(calc(var(--unitSize) * 0.3));
+}
+
+.controlPanel {
+    /*display: none;*/
+}

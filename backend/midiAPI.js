@@ -18,7 +18,7 @@ async function midiAPI(req, res) {
         const data = await fsPromise.readFilePromise(saveTo);
         const curMIDI = new Midi(data);
         const result = {success: true, data: curMIDI};
-        res.writeHead(200, {"Content-Type": "text/json"});
+        res.writeHead(200, {"Content-Type": "text/json", 'Access-Control-Allow-Origin': '*'});
         res.end(JSON.stringify(result));
         await fsPromise.rmPromise(saveTo);
     } catch (e) {

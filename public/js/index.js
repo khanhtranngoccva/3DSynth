@@ -10442,7 +10442,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************/
 /***/ (() => {
 
-eval("const browseButton = document.querySelector(\"#browseMIDI\");\r\nconst browseButtonHidden = document.querySelector(\"#browseMIDIHidden\");\r\nbrowseButton.addEventListener(\"click\", function() {\r\n    browseButtonHidden.click();\r\n})\r\n\r\nbrowseButtonHidden.addEventListener(\"change\", async function() {\r\n    console.log(this.files);\r\n    const curFile = this.files[0];\r\n    const uploadData = new FormData();\r\n    uploadData.set(\"midiFile\", curFile);\r\n\r\n    const result = await fetch(\"/api\", {\r\n        method: \"POST\",\r\n        body: uploadData,\r\n    });\r\n\r\n    const json = await result.json();\r\n    console.log(json);\r\n})\n\n//# sourceURL=webpack:///./src/uploadMIDI.js?");
+eval("const browseButton = document.querySelector(\"#browseMIDI\");\r\nconst browseButtonHidden = document.querySelector(\"#browseMIDIHidden\");\r\nbrowseButton.addEventListener(\"click\", function() {\r\n    browseButtonHidden.click();\r\n});\r\nbrowseButtonHidden.addEventListener(\"input\", async function() {\r\n    console.log(this.files);\r\n    const curFile = this.files[0];\r\n    const uploadData = new FormData();\r\n    uploadData.set(\"midiFile\", curFile);\r\n\r\n    const result = await fetch(\"/api\", {\r\n        method: \"POST\",\r\n        body: uploadData,\r\n    });\r\n\r\n    const json = await result.json();\r\n    console.log(json);\r\n});\n\n//# sourceURL=webpack:///./src/uploadMIDI.js?");
 
 /***/ })
 

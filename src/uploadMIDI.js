@@ -2,9 +2,8 @@ const browseButton = document.querySelector("#browseMIDI");
 const browseButtonHidden = document.querySelector("#browseMIDIHidden");
 browseButton.addEventListener("click", function() {
     browseButtonHidden.click();
-})
-
-browseButtonHidden.addEventListener("change", async function() {
+});
+browseButtonHidden.addEventListener("input", async function() {
     console.log(this.files);
     const curFile = this.files[0];
     const uploadData = new FormData();
@@ -17,4 +16,4 @@ browseButtonHidden.addEventListener("change", async function() {
 
     const json = await result.json();
     console.log(json);
-})
+});

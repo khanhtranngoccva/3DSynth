@@ -1,13 +1,9 @@
 const {handleResponseWith504} = require("./errors");
-const busboy = require("busboy");
-const path = require("path");
 const fs = require("fs");
-const { randomFillSync } = require('crypto');
-const random = (() => {
-    const buf = Buffer.alloc(16);
-    return () => randomFillSync(buf).toString('hex');
-})();
 const midiParser = require("midi-parser-js");
+const busboyAsync = require("./busboyAsync.js");
+const path = require("path");
+const fsPromise = require("./fsPromise.js")
 
 async function midiAPI(req, res) {
     const method = req.method;
@@ -18,23 +14,14 @@ async function midiAPI(req, res) {
         return;
     }
     try {
-        const fileName = random();
-        const saveTo = path.join(__dirname, "MIDIs", `${fileName}.mid`);
-        const bb = busboy({headers: req.headers});
-        bb.on("file", (name, file, info) => {
-            console.log("Saving...");
-            file.pipe(fs.createWriteStream(saveTo));
-        });
-        bb.on("close", async () => {
-            console.log("Saved.");
-            fs.readFile(saveTo, (err, data) => {
-                const result = {success: true, data: midiParser.parse(data)};
-                res.writeHead(200, {"Content-Type": "text/json"});
-                res.end(JSON.stringify(result));
-            });
-        });
-        req.pipe(bb);
+        const saveTo = await busboyAsync.getOneFileFromRequest(req, path.join(__dirname, "userData", "MIDIs"), ".mid");
+        const data = await fsPromise.readFilePromise(saveTo);
+        const result = {success: true, data: midiParser.parse(data)};
+        res.writeHead(200, {"Content-Type": "text/json"});
+        res.end(JSON.stringify(result));
+        await fsPromise.rmPromise(saveTo);
     } catch (e) {
+        console.log(e);
         handleResponseWith504(res, e);
     }
 }

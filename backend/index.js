@@ -16,6 +16,7 @@ const server = http.createServer(async (request, response) => {
     // Case 2: If requested URL is "/", load the index.html file.
     if (request.url === "/") {
         loadFile.loadFile(response, path.join(publicDir, "index.html"));
+        return;
     }
     // Case 3: In case we don't, look for the file. If ENOENT, return 404.
     const publicURL = path.join(publicDir, request.url);

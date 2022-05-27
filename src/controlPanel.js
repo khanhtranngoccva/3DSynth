@@ -15,5 +15,19 @@ browseButtonHidden.addEventListener("input", async function() {
     });
 
     const json = await result.json();
-    console.log(json);
+    const newMidiEvent = new Event("midiPlay");
+    newMidiEvent.midi = json.data;
+    document.dispatchEvent(newMidiEvent);
+});
+
+const togglePauseButton = document.querySelector("#toggleMIDIPause");
+togglePauseButton.addEventListener("click", function() {
+    const evt = new Event("toggleMIDIPause");
+    document.dispatchEvent(evt);
+});
+
+const stopButton = document.querySelector("#stopMIDI");
+stopButton.addEventListener("click", function() {
+    const evt = new Event("stopMIDI");
+    document.dispatchEvent(evt);
 });

@@ -25,7 +25,7 @@ async function getOneFileFromRequest(req, saveDir, ext, filename = random()) {
             }
         });
         bb.on("close", function() {
-            resolve(filePath);
+            setTimeout(() => resolve(filePath), 0);
         });
     });
 }

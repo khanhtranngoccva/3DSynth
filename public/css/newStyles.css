@@ -1,5 +1,5 @@
-.leftSide {
-    /*display: none;*/
+body {
+   font-family: "Lato", sans-serif;
 }
 
 .canvas {
@@ -13,6 +13,7 @@
 .canvas * {
     will-change: transform;
 }
+
 .globalCamera {
     /*transform: rotateY(35deg);*/
     transition: transform 0.1s linear;
@@ -550,6 +551,18 @@
     transform: translateY(calc(var(--unitSize) * 0.3));
 }
 
-.controlPanel {
-    /*display: none;*/
+.toolTip {
+    position: absolute;
+    font-size: 1rem;
+    padding: 0.5em;
+    background: white;
+    border-radius: 0.5em;
+    transform: translateY(calc(var(--unitSize) * -2)) translate(-50%, -50%);
+    display: none;
+    opacity: 0;
+}
+
+.smallButton:hover .toolTip, .bigButton:hover .toolTip {
+    display: block;
+    opacity: 1;
 }

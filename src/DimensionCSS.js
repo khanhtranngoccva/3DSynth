@@ -58,7 +58,7 @@
         });
     }
 
-    let enableParallax = 0;
+    let enableParallax = 1;
     if (enableParallax) {
         activateCamera();
     }

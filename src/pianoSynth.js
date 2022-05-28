@@ -12,7 +12,16 @@ class SynthesizerPiano extends Piano.Piano {
             const keyName = element.id.replace("_", "#");
             this._keyElements[keyName] = element;
         }
+        this._trackLength = 0;
+        setInterval(() => this.checkSeek(), 200);
         this.load();
+    }
+
+    checkSeek() {
+        if (transport.state === "started" && transport.seconds > this._trackLength) {
+            this.pauseMidi(this._trackLength);
+            transport.seconds = this._trackLength;
+        }
     }
 
     triggerAttack({note, midi, time, velocity}) {
@@ -48,6 +57,8 @@ class SynthesizerPiano extends Piano.Piano {
 
     playMidi(midi) {
         this.stopMidi();
+        this._trackLength = midi.duration;
+        console.log("Set duration to ", this._trackLength);
         const tracks = midi.tracks;
         for (let track of tracks) {
             const {notes} = track;
@@ -69,6 +80,7 @@ class SynthesizerPiano extends Piano.Piano {
     }
 
     pauseMidi() {
+        console.log("Paused")
         transport.pause();
         this.stopAll();
     }
@@ -82,6 +94,30 @@ class SynthesizerPiano extends Piano.Piano {
             this.resumeMidi();
         } else if (transport.state === "started") {
             this.pauseMidi();
+        }
+    }
+
+    rewind(time= 5) {
+        if (!(time >= 0)) {
+            throw new Error("Time must be a non-negative number.");
+        }
+        const newTime = transport.seconds - time;
+        if (newTime < 0) {
+            transport.seconds = 0;
+        } else {
+            transport.seconds = newTime;
+        }
+    }
+
+    fastForward(time=5) {
+        if (!(time >= 0)) {
+            throw new Error("Time must be a non-negative number.");
+        }
+        const newTime = transport.seconds + time;
+        if (newTime > this._trackLength) {
+            transport.seconds = this._trackLength;
+        } else {
+            transport.seconds = newTime;
         }
     }
 }

@@ -11,3 +11,11 @@ document.addEventListener("toggleMIDIPause", function(e) {
 document.addEventListener("stopMIDI", function(e) {
     pianoSynth.stopMidi();
 });
+
+document.addEventListener("rewind", function(e) {
+    pianoSynth.rewind();
+});
+
+document.addEventListener("fastForward", function(e) {
+    pianoSynth.fastForward();
+});

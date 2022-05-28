@@ -115,9 +115,7 @@ body {
     transform: translateX(calc(var(--unitSize) * 2)) translateZ(calc(var(--unitSize) * 10.5)) translateY(calc(var(--unitSize) * -0.7));
 }
 
-.keyboard {
 
-}
 
 .whiteKey {
     --width: calc(var(--unitSize) * 10);
@@ -127,7 +125,7 @@ body {
     --frontBackground: #ececec;
     --leftBackground: #8d8d8d;
     --rightBackground: #8d8d8d;
-
+    --backBackground: #ececec;
 }
 
 .blackKey {
@@ -170,6 +168,19 @@ body {
     --height: calc(var(--unitSize) * 1);
     --length: calc(29 * var(--bigKeyLength) + calc(var(--unitSize) * 2.8));
     transform: translateY(calc(var(--unitSize) * 1.5));
+}
+
+.backOfKeyboard {
+    --length: calc(29 * var(--bigKeyLength) + calc(var(--unitSize) * 2.8));
+    --height: calc(var(--unitSize) * 3.5);
+    --width: calc(var(--unitSize) * 0.5);
+    --topBackground: #3d3d3d;
+    --bottomBackground: black;
+    --rightBackground: #171717;
+    --leftBackground: #171717;
+    --frontBackground: black;
+    --backBackground: black;
+    transform: translateY(calc(var(--unitSize) * 0.25)) translateZ(calc(var(--unitSize) * -5.25));
 }
 
 .synthesizer {
@@ -572,6 +583,48 @@ body {
     opacity: 1;
 }
 
-.canvas.hideHeavyVisuals .controlBoard1, .canvas.hideHeavyVisuals .controlBoard4, .canvas.hideHeavyVisuals .controlBoard6 {
+.keyboard {
+    transition: transform 0.5s ease-in-out;
+}
+
+body.hideHeavyVisuals .leftSide, body.hideHeavyVisuals .controlPanel, body.hideHeavyVisuals .rightSide {
+    display: none;
+}
+
+body.hideHeavyVisuals .keyboard {
+    animation: toCenter 0.5s ease forwards;
+}
+
+@keyframes toCenter {
+    100% {
+        transform: none;
+    }
+}
+
+.bottomNavigation {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    flex-wrap: wrap;
+    bottom: 0;
+    z-index: 2;
+    justify-content: center;
+    font-size: 1.25rem;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+button {
+    font: inherit;
+    padding: 0.5em;
+    border: none;
+    background: white;
+    border-radius: 0.5em;
+    column-gap: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+#browseMIDIHidden {
     display: none;
 }

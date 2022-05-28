@@ -17,7 +17,9 @@ async function midiAPI(req, res) {
         const saveTo = await busboyAsync.getOneFileFromRequest(req, path.join(__dirname, "userData", "MIDIs"), ".mid");
         const data = await fsPromise.readFilePromise(saveTo);
         const curMIDI = new Midi(data);
-        const result = {success: true, data: curMIDI};
+        const cloneOfMIDI = Object.assign({}, curMIDI);
+        cloneOfMIDI.duration = curMIDI.duration;
+        const result = {success: true, data: cloneOfMIDI};
         res.writeHead(200, {"Content-Type": "text/json", 'Access-Control-Allow-Origin': '*'});
         res.end(JSON.stringify(result));
         await fsPromise.rmPromise(saveTo);

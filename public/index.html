@@ -228,6 +228,7 @@
                     <div class="blackKeyInner reusableBox"></div>
                 </div>
                 <div class="bottomOfKeyboard reusableBox"></div>
+                <div class="backOfKeyboard reusableBox"></div>
             </div>
             <div class="controlPanel">
                 <div class="controlPanelBox reusableBox"></div>
@@ -300,15 +301,15 @@
                 </div>
                 <div class="controlBoard2">
                     <div class="smallButtonOutline reusableBox verticalOffsetPos1"></div>
-                    <div class="smallButton verticalOffsetPos1" id="browseMIDI">
+                    <div class="smallButton verticalOffsetPos1 browseMIDI">
                         <div class="smallButtonInner reusableBox"></div>
                         <div class="toolTip">Browse</div>
                     </div>
-                    <div class="smallButton verticalOffsetPos2" id="toggleParallax">
+                    <div class="smallButton verticalOffsetPos2 toggleParallax">
                         <div class="smallButtonInner reusableBox"></div>
                         <div class="toolTip">Toggle parallax</div>
                     </div>
-                    <div class="smallButton verticalOffsetPos3" id="perfModeButton">
+                    <div class="smallButton verticalOffsetPos3 perfModeButton">
                         <div class="smallButtonInner reusableBox"></div>
                         <div class="toolTip">Performance mode</div>
                     </div>
@@ -318,7 +319,7 @@
                     <div class="smallButton verticalOffsetPos5">
                         <div class="smallButtonInner reusableBox"></div>
                     </div>
-                    <div class="smallButton verticalOffsetPos6" id="stopMIDI">
+                    <div class="smallButton verticalOffsetPos6 stopMIDI">
                         <div class="smallButtonInner reusableBox"></div>
                         <div class="toolTip">Stop</div>
                     </div>
@@ -330,13 +331,15 @@
                     <div class="screen screen1">
                         <div class="screenInner reusableBox"></div>
                     </div>
-                    <div class="smallButton mainButton1">
+                    <div class="smallButton mainButton1 rewind">
                         <div class="smallButtonInner reusableBox"></div>
+                        <div class="toolTip">Rewind</div>
                     </div>
-                    <div class="smallButton mainButton2">
+                    <div class="smallButton mainButton2 fastForward">
                         <div class="smallButtonInner reusableBox"></div>
+                        <div class="toolTip">Fast forward</div>
                     </div>
-                    <div class="bigButton mainButton3" id="toggleMIDIPause">
+                    <div class="bigButton mainButton3 toggleMIDIPause">
                         <div class="smallButtonInner reusableBox"></div>
                         <div class="toolTip">Pause/resume</div>
                     </div>
@@ -545,7 +548,17 @@
         </div>
     </div>
 </div>
+<div class="bottomNavigation">
+    <button class="browseMIDI" aria-label="Browse MIDI"><i class="fa-solid fa-file-audio"></i>Browse MIDI</button>
+    <button class="rewind" aria-label="Rewind"><i class="fa-solid fa-backward"></i></button>
+    <button class="toggleMIDIPause" aria-label="Pause/Resume"><div><i class="fa-solid fa-play"></i><i class="fa-solid fa-pause"></i></div></button>
+    <button class="fastForward" aria-label="Fast forward"><i class="fa-solid fa-forward"></i></button>
+    <button class="stopMIDI" aria-label="Stop"><i class="fa-solid fa-stop"></i></button>
+    <button class="toggleParallax" aria-label="Toggle parallax"><i class="fa-solid fa-cube"></i>Toggle parallax</button>
+    <button class="perfModeButton" aria-label="Toggle performance mode"><i class="fa-solid fa-rocket"></i>Toggle performance mode</button>
+</div>
 <input type="file" id="browseMIDIHidden" accept=".mid">
+<script src="https://kit.fontawesome.com/bac08de2ab.js" crossorigin="anonymous"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

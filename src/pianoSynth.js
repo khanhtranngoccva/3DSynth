@@ -73,6 +73,14 @@ class SynthesizerPiano extends Piano.Piano {
     }
 }
 
+// let toneStarted = 0;
+// window.addEventListener("click", () => {
+//     if (!toneStarted) {
+//         toneStarted = 1;
+//         Tone.start();
+//     }
+// });
+
 const pianoSynth = new SynthesizerPiano({
     velocities: 5,
 });

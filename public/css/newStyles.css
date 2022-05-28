@@ -8,15 +8,13 @@ body {
     --offsetPerspectiveY: calc(var(--unitSize) * -70);
     user-select: none;
     --unitSize: 1.2vmin;
-}
 
-.canvas * {
-    will-change: transform;
 }
 
 .globalCamera {
     /*transform: rotateY(35deg);*/
     transition: transform 0.1s linear;
+    will-change: transform;
     /*animation: _rotateYTest 10s linear infinite;*/
 }
 
@@ -565,4 +563,11 @@ body {
 .smallButton:hover .toolTip, .bigButton:hover .toolTip {
     display: block;
     opacity: 1;
+}
+
+.knob, .smallerButton, .port {
+    /*display: none;*/
+}
+.controlPanel {
+    /*display: none;*/
 }

@@ -21,7 +21,10 @@ NodeList.prototype.multiAssign = function(eventType, callback) {
     const keys = document.querySelectorAll(".whiteKeyInner, .blackKeyInner");
     keys.multiAssign("mousedown", function(e) {
         mousedown = 1;
+        const t1 = performance.now();
         pianoSynth.triggerAttack({note: this.id.replace("_", "#")});
+        const t2 = performance.now();
+        console.log(t2 - t1);
     });
     keys.multiAssign("mouseup", function(e) {
         mousedown = 0;

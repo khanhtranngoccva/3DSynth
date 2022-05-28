@@ -31,6 +31,7 @@ body {
 /* 3D Canvas transform-style */
 .canvas * {
     transform-style: preserve-3d;
+    transform: translate(0);
 }
 
 /* Auto center the camera */
@@ -43,7 +44,7 @@ body {
 /* Apply camera rotation here. */
 .globalCamera {
     /*transform: rotateY(180deg);*/
-    /*will-change: transform;*/
+    will-change: transform;
 }
 
 /* Framework internals and test */

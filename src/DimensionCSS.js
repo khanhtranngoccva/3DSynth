@@ -52,13 +52,11 @@
             const percentageY = clientY / window.innerHeight;
             const rotX = -(minRotX + (maxRotX - minRotX) * percentageY);
             const rotY = minRotY + (maxRotY - minRotY) * percentageX;
-            requestAnimationFrame(() => {
-                camera.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-            });
+            camera.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
         });
     }
 
-    let enableParallax = 1;
+    let enableParallax = 0;
     if (enableParallax) {
         activateCamera();
     }

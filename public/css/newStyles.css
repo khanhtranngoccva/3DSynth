@@ -5,13 +5,13 @@ body {
 .canvas {
     background: #3da1ff;
     perspective: calc(var(--unitSize) * 100);
-    --offsetPerspectiveY: calc(var(--unitSize) * -70);
+    --offsetPerspectiveY: calc(var(--unitSize) * -90);
     user-select: none;
     --unitSize: 1.2vmin;
 }
 
-.canvas * {
-    will-change: transform;
+.canvas {
+    margin: calc(var(--unitSize) * -0.1);
 }
 
 .globalCamera {
@@ -190,7 +190,6 @@ body {
     --width: calc(var(--unitSize) * 20);
     --height: calc(var(--unitSize) * 4);
     --length: calc(29 * var(--bigKeyLength) + calc(var(--unitSize) * 2.9));
-    margin: calc(var(--unitSize) * -0.1)
 }
 
 .controlBoard1 {
@@ -547,22 +546,32 @@ body {
     transition: transform 0.25s ease;
 }
 
-.smallButtonInner:active {
+.smallButton:active > .smallButtonInner, .bigButton:active > .smallButtonInner {
     transform: translateY(calc(var(--unitSize) * 0.3));
 }
 
 .toolTip {
     position: absolute;
-    font-size: 1rem;
-    padding: 0.5em;
+    font-size: calc(var(--unitSize) * 1.5);
+    padding: 0.25em;
     background: white;
     border-radius: 0.5em;
     transform: translateY(calc(var(--unitSize) * -2)) translate(-50%, -50%);
     display: none;
     opacity: 0;
+    width: max-content;
+    transition: filter 0.25s ease;
 }
 
-.smallButton:hover .toolTip, .bigButton:hover .toolTip {
+.smallButton:active > .toolTip, .bigButton:active > .toolTip {
+    filter: brightness(0.8);
+}
+
+.smallButtonInner:hover ~ .toolTip {
     display: block;
     opacity: 1;
+}
+
+.canvas.hideHeavyVisuals .controlBoard1, .canvas.hideHeavyVisuals .controlBoard4, .canvas.hideHeavyVisuals .controlBoard6 {
+    display: none;
 }

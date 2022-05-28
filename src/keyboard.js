@@ -12,7 +12,6 @@
     const blackKeys = Array.from(document.querySelectorAll(".blackKey"));
     const blackKeysCount = blackKeys.length;
     let counter = 0;
-    console.log("oof");
     for (let i = -(blackKeysCount - 1); i <= blackKeysCount - 1; i+=2) {
         blackKeys[counter].style.transform = `translateZ(calc(var(--unitSize) * -1.5)) translateY(calc(var(--unitSize) * -0.5)) translateX(calc(var(--bigKeyLength) * ${i / 2} + var(--unitSize) * ${i / 20}))`
         counter++;

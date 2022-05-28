@@ -7,21 +7,34 @@ class SynthesizerPiano extends Piano.Piano {
     constructor(opts) {
         console.log("Piano activated.");
         super(opts).toDestination();
+        this._keyElements = {};
+        for (let element of document.querySelectorAll(".whiteKeyInner, .blackKeyInner")) {
+            const keyName = element.id.replace("_", "#");
+            this._keyElements[keyName] = element;
+        }
         this.load();
     }
 
     triggerAttack({note, midi, time, velocity}) {
-        const curElement = document.getElementById(note.replace("#", "_"));
+        const curElement = this._keyElements[note];
         if (curElement) {
-            setTimeout(() => curElement.classList.add("pressed"), (time ?? 0) * 1000);
+            if (time) {
+                setTimeout(() => curElement.classList.add("pressed"), time * 1000);
+            } else {
+                curElement.classList.add("pressed");
+            }
         }
         return super.keyDown({note, midi, time, velocity});
     }
 
     triggerRelease({note, midi, time, velocity}) {
-        const curElement = document.getElementById(note.replace("#", "_"));
+        const curElement = this._keyElements[note];
         if (curElement) {
-            setTimeout(() => curElement.classList.remove("pressed"), (time ?? 0) * 1000);
+            if (time) {
+                setTimeout(() => curElement.classList.remove("pressed"), time * 1000);
+            } else {
+                curElement.classList.remove("pressed");
+            }
         }
         return super.keyUp({note, midi, time, velocity});
     }

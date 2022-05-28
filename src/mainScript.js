@@ -1,3 +1,4 @@
+import {} from "./prototype.js"
 import {} from "./keyboard.js";
 import {} from "./DimensionCSS.js";
 import {} from "./pianoKeyboardPlayer.js";

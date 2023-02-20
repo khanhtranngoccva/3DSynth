@@ -1,4 +1,4 @@
-# 3DCakeMaker
+# 3DSynth
 A full-stack synthesizer that plays your submitted MIDI files, inspired by the ASM Hydrasynth synthesizer!
 
 **Fun fact**: I started creating this on one of my Twitch streams!

@@ -6,6 +6,11 @@ const views = require("./views");
 const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(async (request, response) => {
+    if (path.normalize(decodeURIComponent(request.url)) !== decodeURIComponent(request.url)) {
+        response.statusCode = 403;
+        response.end();
+        return;
+    }
     const lookupFunction = views.get(request.url);
     // Case 1: In case we have a function in the views object, we execute it.
     if (typeof lookupFunction === "function") {
